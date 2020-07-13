@@ -74,7 +74,7 @@ foreach((array)$events as $event){
                 // 市名を取得
                 if(in_array('locality', $addressComponent['types']) && !in_array('ward', $addressComponent['types'])){
                     $location = $addressComponent['long_name'];
-                break;
+                    break;
                 }
             }
         }
