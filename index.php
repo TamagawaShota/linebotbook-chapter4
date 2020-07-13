@@ -53,7 +53,7 @@ foreach((array)$events as $event){
         // 住所情報のみを取り出し
         $addressComponentArray = $json['results'][0]['address_components'];
         // 要素をループで処理
-        foreach($addressComponentArray as $addressComponent){
+        foreach((array)$addressComponentArray as $addressComponent){
             // 県名を取得
             if(in_array('administrative_area_level_1', $addressComponent['types'])){
                 $prefName = $addressComponent['long_name'];
@@ -70,7 +70,7 @@ foreach((array)$events as $event){
         // それ以外なら
         else{
             // 要素をループで処理
-            foreach($addressComponentArray as $addressComponent){
+            foreach((array)$addressComponentArray as $addressComponent){
                 // 市名を取得
                 if(in_array('locality', $addressComponent['types']) && !in_array('ward', $addressComponent['types'])){
                     $location = $addressComponent['long_name'];
