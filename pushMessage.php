@@ -7,7 +7,7 @@ $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient(getenv('CHANNEL_ACCESS
 // CurlHTTPClientとシークレットを使いLINEBotをインスタンス化
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => getenv('CHANNEL_SECRET')]);
 // あなたのユーザーIDを入力してください
-$userId = 'ユーザーID';
+$userId = 'U91ef9c081063d5ade26f300077aa35ba';
 $message = 'Hello Push API';
 
 // メッセージをユーザーID宛にプッシュ
