@@ -19,8 +19,8 @@ catch(\LINE\LINEBot\Exception\InvalidSignatureException $e){
 catch(\LINE\LINEBot\Exception\UnknownEventTypeException $e){
     error_log('parseEventRequest failed. UnknownEventTypeException =>'.var_export($e, true));
 }
-catch(\LINE\LINEBot\Exception\UnKnownMessageTypeException $e){
-    error_log('parseEventRequest failed. UnKnownMessageTypeException =>'.var_export($e, true));
+catch(\LINE\LINEBot\Exception\UnknownMessageTypeException $e){
+    error_log('parseEventRequest failed. UnknownMessageTypeException =>'.var_export($e, true));
 }
 catch(\LINE\LINEBot\Exception\InvalidEventRequestException $e){
     error_log('parseEventRequest failed. InvalidEventRequestException =>'.var_export($e, true));
@@ -128,8 +128,8 @@ foreach((array)$events as $event){
                 array_push($actionArray, new LINE\LINEBot\TemplateActionBuilder\MessageTemplateActionBuilder($city, $city));
             }
             // Buttonsテンプレートを返信
-            $builder = new LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('見つかりませんでした。',
-                        new LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder('見つかりませんでした。', 'もしかして？', null, $actionArray));
+            $builder = new \LINE\LINEBot\MessageBuilder\TemplateMessageBuilder('見つかりませんでした。',
+                        new \LINE\LINEBot\MessageBuilder\TemplateBuilder\ButtonTemplateBuilder('見つかりませんでした。', 'もしかして？', null, $actionArray));
             $bot->replyMessage($event->getReplyToken(), $builder);
         }
         // 候補が存在しない場合
